@@ -9,6 +9,7 @@ on:
 env:
   IMAGE_NAME: demorepo
   COMMIT_ID1: 12334555555
+  IMAGE_NAME1: hello
 
 jobs:
   build-and-push:
@@ -39,3 +40,4 @@ jobs:
             anish1080/demorepo:${{ env.COMMIT_ID }}
             anish1080/demorepo:latest
             anish1080/demorepo:${{env.COMMIT_ID1 }}
+            anish1080/demorepo:${{env.IMAGE_NAME1 }}
