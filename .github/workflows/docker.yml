@@ -8,6 +8,7 @@ on:
 
 env:
   IMAGE_NAME: demorepo
+  COMMIT_ID1: 12334555555
 
 jobs:
   build-and-push:
@@ -17,7 +18,7 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v4
 
-      - name: 5c5bbd242d88151c719b519b3fbf4013343fc898
+      - name: COMMIT_ID
         run: echo "COMMIT_ID=${GITHUB_SHA::7}" >> $GITHUB_ENV
 
       - name: Login to Docker Hub
@@ -37,3 +38,4 @@ jobs:
           tags: |
             anish1080/demorepo:${{ env.COMMIT_ID }}
             anish1080/demorepo:latest
+            anish1080/demorepo:${{env.COMMIT_ID1 }}
